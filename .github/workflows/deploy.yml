@@ -24,6 +24,12 @@ jobs:
       - name: "Setup Terraform"
         uses: hashicorp/setup-terraform@v1
 
+      - name: "Change Directory to Terraform Configuration"
+        run: cd applications/services/foo
+
+      - name: "Create credentials file"
+        run: echo "${{ secrets.GCP_CREDENTIALS }}" > credentials.json
+
       - name: "Terraform Init"
         run: terraform init
         env:
