@@ -6,7 +6,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket = var.bucket_name
+    bucket = "valiant-song-420805-tfstate"
     prefix = "terraform/state"
   }
 }
